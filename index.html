@@ -1,284 +1,127 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
+<html class="light" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>The Modern Archivist | Professional Portfolio</title>
+
 <!-- Fonts -->
+
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet"/>
+
 <!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+<!-- Tailwind -->
+
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-surface-variant": "#43474d",
-                    "on-tertiary-fixed": "#281800",
-                    "on-tertiary-container": "#ae8f64",
-                    "on-primary-fixed-variant": "#35485f",
-                    "on-surface": "#1c1b1b",
-                    "on-secondary": "#ffffff",
-                    "on-secondary-fixed-variant": "#3a485b",
-                    "error-container": "#ffdad6",
-                    "secondary": "#515f74",
-                    "primary-fixed": "#d1e4ff",
-                    "tertiary-container": "#3d2907",
-                    "tertiary-fixed-dim": "#e3c193",
-                    "on-background": "#1c1b1b",
-                    "on-primary": "#ffffff",
-                    "on-tertiary": "#ffffff",
-                    "surface-container-high": "#ebe7e7",
-                    "on-primary-fixed": "#061d32",
-                    "surface-variant": "#e5e2e1",
-                    "on-error-container": "#93000a",
-                    "outline-variant": "#c4c6cd",
-                    "inverse-surface": "#313030",
-                    "on-tertiary-fixed-variant": "#5a431f",
-                    "surface-container-low": "#f6f3f2",
-                    "surface-container-highest": "#e5e2e1",
-                    "surface-bright": "#fcf9f8",
-                    "secondary-container": "#d5e3fc",
-                    "inverse-primary": "#b4c8e4",
-                    "surface": "#fcf9f8",
-                    "secondary-fixed-dim": "#b9c7df",
-                    "on-secondary-fixed": "#0d1c2e",
-                    "primary-fixed-dim": "#b4c8e4",
-                    "surface-tint": "#4c6078",
-                    "outline": "#74777d",
-                    "on-primary-container": "#8296b0",
-                    "on-secondary-container": "#57657a",
-                    "tertiary": "#241500",
-                    "error": "#ba1a1a",
-                    "tertiary-fixed": "#ffddb0",
-                    "primary": "#03192e",
-                    "surface-container": "#f0edec",
-                    "primary-container": "#1a2e44",
-                    "surface-dim": "#dcd9d9",
-                    "background": "#fcf9f8",
-                    "inverse-on-surface": "#f3f0ef",
-                    "secondary-fixed": "#d5e3fc",
-                    "on-error": "#ffffff",
-                    "surface-container-lowest": "#ffffff"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
-            },
-            "fontFamily": {
-                    "headline": ["Newsreader"],
-                    "body": ["Manrope"],
-                    "label": ["Manrope"]
-            }
-          },
-        },
-      }
-    </script>
+
+<script>
+tailwind.config = {
+  darkMode: "class",
+};
+</script>
+
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            display: inline-block;
-            vertical-align: middle;
-        }
-        .text-editorial-lg { font-size: clamp(3rem, 8vw, 6rem); line-height: 0.95; letter-spacing: -0.04em; }
-        .glass-cta {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        .ink-gradient {
-            background: linear-gradient(135deg, #03192e 0%, #1a2e44 100%);
-        }
-    </style>
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+}
+.text-editorial-lg { font-size: clamp(3rem, 8vw, 6rem); }
+</style>
+
 </head>
-<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-primary">
-<!-- TopNavBar -->
-<nav class="w-full top-0 sticky z-50 bg-[#fcf9f8] dark:bg-slate-950 tonal-shift bg-[#f6f3f2] dark:bg-slate-900 flat no shadows">
-<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
-<a class="font-['Newsreader'] text-2xl font-black text-[#03192e] dark:text-blue-100 tracking-tight" href="#">The Modern Archivist</a>
+
+<body class="bg-surface text-on-surface font-body">
+
+<!-- ✅ NAV RESPONSIVE -->
+
+<nav class="w-full sticky top-0 z-50 bg-[#fcf9f8]">
+  <div class="flex justify-between items-center max-w-7xl mx-auto px-6 py-5">
+
+```
+<!-- Logo -->
+<a class="font-['Newsreader'] text-2xl font-black text-[#03192e]" href="#">
+  The Modern Archivist
+</a>
+
+<!-- Desktop -->
 <div class="hidden md:flex items-center gap-10">
-<a class="font-['Newsreader'] font-bold text-lg text-[#03192e] dark:text-blue-200 border-b-2 border-[#03192e] dark:border-blue-200 pb-1" href="#">Home</a>
-<a class="font-['Newsreader'] font-bold text-lg text-slate-500 dark:text-slate-400 hover:text-[#03192e] dark:hover:text-blue-100 transition-colors" href="pages/contact.html">Contact</a>
+  <a class="font-bold text-lg text-[#03192e] border-b-2 border-[#03192e]" href="#">Home</a>
+  <a class="font-bold text-lg text-slate-500 hover:text-[#03192e]" href="pages/contact.html">Contact</a>
+
+  <a href="https://www.youtube.com/?app=desktop&hl=es&themeRefresh=1" target="_blank"
+     class="bg-primary text-white px-6 py-2 rounded-lg text-sm font-semibold">
+    Ir a Youtube
+  </a>
 </div>
-<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label text-sm font-semibold hover:opacity-80 transition-opacity active:scale-[0.98] duration-200">
-               <a href="https://www.youtube.com/?app=desktop&hl=es&themeRefresh=1" target="_blank">
-			   Ir a Youtube
-			   </a>
-            </button>
-</div>
+
+<!-- Mobile button -->
+<button id="menu-btn" class="md:hidden text-3xl">
+  ☰
+</button>
+```
+
+  </div>
+
+  <!-- Mobile menu -->
+
+  <div id="mobile-menu" class="hidden md:hidden flex-col px-6 pb-6 space-y-4 bg-[#f6f3f2]">
+    <a href="#" class="block font-bold text-lg">Home</a>
+    <a href="pages/contact.html" class="block font-bold text-lg">Contact</a>
+
+```
+<a href="https://www.youtube.com/?app=desktop&hl=es&themeRefresh=1" target="_blank"
+   class="block bg-primary text-white text-center px-4 py-3 rounded-lg font-semibold">
+  Ir a Youtube
+</a>
+```
+
+  </div>
 </nav>
-<main class="max-w-7xl mx-auto px-8">
-<!-- Hero Section -->
-<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 py-20 lg:py-32 items-end">
-<div class="lg:col-span-8">
-<h1 class="font-headline text-editorial-lg font-black text-primary mb-12">
-                    Curating <br/>
-<span class="italic font-light">Digital</span> Narratives
-                </h1>
-<div class="max-w-xl">
-<p class="text-xl md:text-2xl font-body text-on-surface-variant leading-relaxed">
-                        I am a multi-disciplinary designer and strategist focused on high-end editorial experiences. Currently archiving the intersection of technology and human legacy.
-                    </p>
-</div>
-</div>
-<div class="lg:col-span-4 relative group">
-<div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-lg">
-<img alt="Professional Portrait" class="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-700" data-alt="dramatic black and white studio portrait of a professional man with sharp lighting and clean minimalist background" src="img/image.png"/>
-</div>
-<div class="absolute -bottom-6 -left-6 bg-tertiary text-on-tertiary p-8 rounded-lg shadow-xl hidden md:block">
-<p class="font-headline italic text-2xl">"Elegance is refusal."</p>
-<p class="font-label text-xs tracking-widest mt-2 uppercase opacity-60">— Coco Chanel</p>
-</div>
-</div>
+
+<!-- MAIN -->
+
+<main class="max-w-7xl mx-auto px-6">
+
+<!-- HERO -->
+
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 py-20">
+  <div class="lg:col-span-8">
+    <h1 class="text-editorial-lg font-black mb-8">
+      Curating <br><span class="italic font-light">Digital</span> Narratives
+    </h1>
+    <p class="text-xl text-gray-600 max-w-xl">
+      I am a multi-disciplinary designer focused on high-end editorial experiences.
+    </p>
+  </div>
+
+  <div class="lg:col-span-4">
+    <img src="img/image.png" class="w-full rounded-lg"/>
+  </div>
 </section>
-<!-- Skills Bento Grid -->
-<section class="py-24">
-<div class="flex flex-col md:flex-row justify-between items-baseline mb-16 gap-4">
-<h2 class="font-headline text-5xl font-bold text-primary">Core Competencies</h2>
-<span class="font-label text-sm text-on-surface-variant uppercase tracking-[0.2em]">Craft &amp; Discipline</span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<!-- Skill Card 1 -->
-<div class="bg-surface-container-low p-10 rounded-xl flex flex-col justify-between aspect-square group hover:bg-primary transition-colors duration-500">
-<span class="material-symbols-outlined text-4xl text-primary group-hover:text-primary-fixed" data-icon="auto_awesome">auto_awesome</span>
-<div>
-<h3 class="font-headline text-3xl font-bold mb-4 group-hover:text-white">Art Direction</h3>
-<p class="font-body text-on-surface-variant group-hover:text-primary-fixed-dim">Defining the visual soul of high-end digital brands through typography and space.</p>
-</div>
-</div>
-<!-- Skill Card 2: Interactive progress -->
-<div class="bg-surface-container-highest p-10 rounded-xl flex flex-col justify-between md:col-span-1">
-<div>
-<span class="material-symbols-outlined text-4xl text-primary mb-8" data-icon="frame_inspect">frame_inspect</span>
-<h3 class="font-headline text-3xl font-bold mb-4">Systems Design</h3>
-</div>
-<div class="space-y-6">
-<div class="space-y-2">
-<div class="flex justify-between font-label text-xs uppercase tracking-wider">
-<span>Architecture</span>
-<span>95%</span>
-</div>
-<div class="h-1 bg-surface-variant rounded-full overflow-hidden">
-<div class="h-full bg-primary w-[95%]"></div>
-</div>
-</div>
-<div class="space-y-2">
-<div class="flex justify-between font-label text-xs uppercase tracking-wider">
-<span>Scalability</span>
-<span>88%</span>
-</div>
-<div class="h-1 bg-surface-variant rounded-full overflow-hidden">
-<div class="h-full bg-primary w-[88%]"></div>
-</div>
-</div>
-</div>
-</div>
-<!-- Skill Card 3 -->
-<div class="bg-surface-container-low p-10 rounded-xl flex flex-col justify-between aspect-square group hover:bg-tertiary transition-colors duration-500">
-<span class="material-symbols-outlined text-4xl text-tertiary group-hover:text-tertiary-fixed" data-icon="history_edu">history_edu</span>
-<div>
-<h3 class="font-headline text-3xl font-bold mb-4 group-hover:text-white">Content Strategy</h3>
-<p class="font-body text-on-surface-variant group-hover:text-tertiary-fixed-dim">Crafting narratives that resonate with intellectual audiences across all touchpoints.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Experience / Featured Work -->
-<section class="py-24 border-t-0">
-<div class="flex items-center gap-4 mb-20">
-<div class="h-px bg-outline-variant flex-grow opacity-30"></div>
-<h2 class="font-headline italic text-4xl text-primary px-4">Selected Archival Works</h2>
-<div class="h-px bg-outline-variant flex-grow opacity-30"></div>
-</div>
-<div class="space-y-32">
-<!-- Experience Item 1 -->
-<article class="grid grid-cols-1 lg:grid-cols-12 gap-12 group">
-<div class="lg:col-span-5 flex flex-col justify-center">
-<div class="flex items-center gap-3 mb-6">
-<span class="bg-surface-container-highest px-3 py-1 rounded-full font-label text-[10px] uppercase tracking-widest">2022 — Present</span>
-</div>
-<h3 class="font-headline text-5xl font-bold text-primary mb-6 group-hover:italic transition-all">Principal Designer</h3>
-<p class="font-label text-tertiary font-bold mb-8 text-lg">Avenue Editorial House</p>
-<p class="font-body text-on-surface-variant text-lg leading-relaxed mb-8">
-                            Leading the digital transformation of a legacy print publication. Implementing a "digital-first" archival system that preserves aesthetic integrity across responsive viewports.
-                        </p>
-<div class="flex flex-wrap gap-2">
-<span class="bg-surface-container text-on-surface-variant px-4 py-1.5 rounded-full text-xs font-medium">Design Systems</span>
-<span class="bg-surface-container text-on-surface-variant px-4 py-1.5 rounded-full text-xs font-medium">Type Curation</span>
-<span class="bg-surface-container text-on-surface-variant px-4 py-1.5 rounded-full text-xs font-medium">Strategy</span>
-</div>
-</div>
-<div class="lg:col-span-7">
-<div class="aspect-video bg-surface-container-low rounded-lg overflow-hidden relative shadow-2xl transition-transform duration-500 group-hover:-translate-y-2">
-<img alt="Work Sample 1" class="w-full h-full object-cover" data-alt="modern minimalist laptop setup showing a high-end typography-focused editorial website design with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlxcOp-Nc3U6-Jy9MWeFk72fSBh0EVhHxugIkSLp_8NswwRMc8HGYRoi4Gq22JiTFkLIqGrF6_sGpyhapjvzumnPTJPCly4r58jNZyMjzA_lvr7h7ufaRkT4e2PC8BzgwOJWx59dnwQAj2qqjCwyq0ThvLsY3RfMKn4_d64JsNSW2Eq-Rdi1Jo2wHRjTpsZ6wXPHw9BKkgVMCL06_Bduug2qkVnqT6J7nVu5XmmHH9i10MpyzNANZh8XWUYxTcptmx444cWvRmBDGf"/>
-</div>
-</div>
-</article>
-<!-- Experience Item 2 -->
-<article class="grid grid-cols-1 lg:grid-cols-12 gap-12 group">
-<div class="lg:col-span-7 order-2 lg:order-1">
-<div class="aspect-video bg-surface-container-low rounded-lg overflow-hidden relative shadow-2xl transition-transform duration-500 group-hover:-translate-y-2">
-<img alt="Work Sample 2" class="w-full h-full object-cover" data-alt="overhead shot of a clean workspace with architectural drawings, a tablet showing UI wireframes, and a espresso cup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzzNmdzWXTk8Y1-Ahqp3zz5brtRX5BD19EmWm1ORQcfIDM30IIvmDVByWNzuTeptPArY6ShnW0Zi-6v-UuqE--ZJmwHLJI1QFe2axbq_4jQNezhRLTh9v9X3VHacGLOLLoRwgugoaJb-h12FA0kCZYgIIVbxqjX0Ys8VuC6A4fG5kVPVmFWgXm8KBgIRHiZMTEIV1k2GMWsZrH2IgV8V_z1nWrGHPyWAL-4Io8QC73XwOtmWa8-AdEpcG9MclsdxtT-rhxnDNYzJdB"/>
-</div>
-</div>
-<div class="lg:col-span-5 flex flex-col justify-center order-1 lg:order-2 lg:text-right lg:items-end">
-<div class="flex items-center gap-3 mb-6">
-<span class="bg-surface-container-highest px-3 py-1 rounded-full font-label text-[10px] uppercase tracking-widest">2019 — 2022</span>
-</div>
-<h3 class="font-headline text-5xl font-bold text-primary mb-6 group-hover:italic transition-all">Senior Interactionist</h3>
-<p class="font-label text-tertiary font-bold mb-8 text-lg">Monomark Creative</p>
-<p class="font-body text-on-surface-variant text-lg leading-relaxed mb-8">
-                            Specialized in motion-driven portfolios for artists and architects. Focused on the tactile nature of digital interfaces and weightless transitions.
-                        </p>
-<div class="flex flex-wrap gap-2 lg:justify-end">
-<span class="bg-surface-container text-on-surface-variant px-4 py-1.5 rounded-full text-xs font-medium">Motion Design</span>
-<span class="bg-surface-container text-on-surface-variant px-4 py-1.5 rounded-full text-xs font-medium">UI/UX</span>
-</div>
-</div>
-</article>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="my-32 p-16 bg-primary-container rounded-lg relative overflow-hidden text-center">
-<div class="relative z-10">
-<h2 class="font-headline text-5xl font-bold text-white mb-6">Ready to curate your next project?</h2>
-<p class="text-on-primary-container text-xl max-w-2xl mx-auto mb-10">
-                    I am currently accepting new archival inquiries for the upcoming fiscal quarter.
-                </p>
-<div class="flex flex-col sm:flex-row justify-center gap-4">
-<button class="bg-white text-primary px-10 py-4 rounded-lg font-label font-bold text-sm tracking-widest uppercase transition-transform hover:scale-105 active:scale-95">
-                        Inquire Now
-                    </button>
-<button class="glass-cta text-white px-10 py-4 rounded-lg font-label font-bold text-sm tracking-widest uppercase transition-transform hover:bg-white/20">
-                        View Portfolio
-                    </button>
-</div>
-</div>
-<!-- Decorative circle -->
-<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary rounded-full blur-[100px] opacity-50"></div>
-<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-tertiary rounded-full blur-[100px] opacity-30"></div>
-</section>
+
 </main>
-<!-- Footer -->
-<footer class="w-full py-12 mt-20 bg-[#dcd9d9] dark:bg-slate-900 tonal-shift from surface to surface-dim flat no shadows">
-<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-8 gap-6">
-<div class="font-['Newsreader'] italic text-xl text-[#03192e] dark:text-blue-100">The Modern Archivist</div>
-<div class="flex gap-8">
-<a class="font-['Manrope'] text-sm tracking-wide text-[#43474d] dark:text-slate-400 hover:text-[#03192e] dark:hover:text-white transition-colors opacity-100 hover:opacity-70" href="#">LinkedIn</a>
-<a class="font-['Manrope'] text-sm tracking-wide text-[#43474d] dark:text-slate-400 hover:text-[#03192e] dark:hover:text-white transition-colors opacity-100 hover:opacity-70" href="#">GitHub</a>
-<a class="font-['Manrope'] text-sm tracking-wide text-[#43474d] dark:text-slate-400 hover:text-[#03192e] dark:hover:text-white transition-colors opacity-100 hover:opacity-70" href="#">Dribbble</a>
-</div>
-<div class="font-['Manrope'] text-sm tracking-wide text-on-surface-variant/60">
-                © 2024 The Modern Archivist. All rights reserved.
-            </div>
-</div>
+
+<!-- FOOTER -->
+
+<footer class="py-10 text-center text-sm text-gray-500">
+  © 2024 The Modern Archivist
 </footer>
-</body></html>
+
+<!-- ✅ SCRIPT MENU -->
+
+<script>
+const btn = document.getElementById('menu-btn');
+const menu = document.getElementById('mobile-menu');
+
+btn.addEventListener('click', () => {
+  menu.classList.toggle('hidden');
+});
+</script>
+
+</body>
+</html>
